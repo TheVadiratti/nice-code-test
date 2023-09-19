@@ -1,4 +1,9 @@
+@import "./vars.scss";
+
 body {
   display: flex;
   flex-direction: column;
+  box-sizing: border-box;
+  margin: 0;
+  background-color: $background-gray;
 }
