@@ -1,4 +1,4 @@
-import { memo, MouseEventHandler } from "react";
+import { memo, MouseEventHandler, useMemo } from "react";
 import Styles from "./button-round.module.scss";
 
 interface Props {
@@ -23,30 +23,30 @@ const ButtonRound = memo(
     hint,
     extraClass,
   }: Props) => {
-    let svgColor;
+    const svgColor = useMemo(() => {
+      switch (svgInitColor) {
+        case "gray":
+          return Styles.svgGray;
+        case "black":
+          return Styles.svgBlack;
+        default:
+          return null;
+      }
+    }, [svgInitColor]);
 
-    switch (svgInitColor) {
-      case "gray":
-        svgColor = Styles.svgGray;
-        break;
-      case "black":
-        svgColor = Styles.svgBlack;
-        break;
-      default:
-        svgColor = null;
-        break;
-    }
-
-    const classNames = [Styles.button];
-    if (isTransparent) {
-      classNames.push(Styles.transparent);
-    }
-    if (svgColor) {
-      classNames.push(svgColor);
-    }
-    if (extraClass) {
-      classNames.push(extraClass);
-    }
+    const classNames = useMemo(() => {
+      const names = [Styles.button];
+      if (isTransparent) {
+        names.push(Styles.transparent);
+      }
+      if (svgColor) {
+        names.push(svgColor);
+      }
+      if (extraClass) {
+        names.push(extraClass);
+      }
+      return names;
+    }, [isTransparent, extraClass, svgColor]);
 
     return (
       <button
