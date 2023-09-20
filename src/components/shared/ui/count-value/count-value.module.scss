@@ -1,0 +1,22 @@
+@import "../../../../styles/vars.scss";
+
+.cnt {
+  width: fit-content;
+  padding: 2px 4px;
+  border-radius: 9px;
+  background-color: $gray-color;
+}
+
+.active {
+  background-color: $blue-color;
+}
+
+.value {
+  color: $background-white;
+  margin: 0;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 14px;
+  text-align: center;
+}
