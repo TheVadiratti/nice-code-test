@@ -5,6 +5,8 @@ $background-white: #ffffff;
 $background-gray: #cdcdcd;
 $background-light-gray: #F1F2F3;
 
+$main-radius: 4px;
+
 @mixin s-text($color, $line-height) {
   color: $color;
   font-size: 12px;
