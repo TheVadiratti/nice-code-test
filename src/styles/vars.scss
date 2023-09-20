@@ -3,6 +3,7 @@ $black-color: #161718;
 $gray-color: #616F82;
 $background-white: #ffffff;
 $background-gray: #cdcdcd;
+$background-light-gray: #F1F2F3;
 
 @mixin s-text($color, $line-height) {
   color: $color;
