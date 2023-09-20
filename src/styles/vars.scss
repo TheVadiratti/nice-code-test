@@ -28,3 +28,9 @@ $background-light-gray: #F1F2F3;
   font-weight: 400;
   line-height: $line-height;
 }
+
+%elipsis-overflow {
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}
