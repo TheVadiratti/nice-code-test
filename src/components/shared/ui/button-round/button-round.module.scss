@@ -15,13 +15,24 @@
   cursor: pointer;
 }
 
+.svgGray > svg > path {
+  fill: $gray-color;
+}
+
+.svgBlack > svg > path {
+  fill: $black-color;
+}
+
 .button:hover {
   background-color: $blue-color;
 }
 
 .button:hover > svg > path {
-  background-color: $blue-color;
   fill: $background-white;
+}
+
+.transparent {
+  background-color: transparent;
 }
 
 .hintCnt {
