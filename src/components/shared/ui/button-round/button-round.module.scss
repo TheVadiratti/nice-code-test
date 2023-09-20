@@ -46,7 +46,7 @@
 
 .hint {
   margin: 0;
-  @include s-text($background-white);
+  @include s-text($background-white, normal);
 }
 
 .button:hover .hintCnt {
