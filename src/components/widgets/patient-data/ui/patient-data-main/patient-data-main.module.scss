@@ -1,0 +1,9 @@
+@import "../../../../../styles/vars.scss";
+
+.cnt {
+  flex-grow: 1;
+  padding: 15px;
+  border-radius: $main-radius;
+  background-color: $background-white;
+  box-shadow: 0px 1px 4px 0px rgba(30, 30, 30, 0.10);
+}
