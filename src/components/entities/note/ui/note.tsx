@@ -15,6 +15,7 @@ const Note = memo(({ text, date, image }: Props) => (
     <div className={Styles.content}>
       <p className={Styles.text}>
         <span className={Styles.date}>{date}</span>
+        &nbsp;
         {text}
       </p>
       {image && (
