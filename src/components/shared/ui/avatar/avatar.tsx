@@ -1,9 +1,10 @@
 import { memo, useMemo } from "react";
 import Image, { StaticImageData } from "next/image";
+import defaultAvatar from "../../../../../public/default-avatar.png";
 import Styles from "./avatar.module.scss";
 
 interface Props {
-  img: StaticImageData | string;
+  img?: StaticImageData | string;
   alt: string;
   size?: "default" | "small";
   extraClass?: string;
@@ -36,7 +37,7 @@ const Avatar = memo(({ img, alt, size = "default", extraClass }: Props) => {
     >
       <Image
         className={Styles.image}
-        src={img}
+        src={img || defaultAvatar}
         alt={alt}
         width={sizes}
         height={sizes}

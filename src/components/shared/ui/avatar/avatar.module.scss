@@ -1,7 +1,10 @@
+@import "../../../../styles/vars.scss";
+
 .cnt {
   position: relative;
   overflow: hidden;
   border-radius: 100%;
+  background-color: $background-white;
 }
 
 .defaultSize {
