@@ -39,6 +39,7 @@ const PATIENTS: Patient[] = [
       {
         type: "Личный приём",
         date: "15.01.2019, 12:30-13:00",
+        status: "Не подтвержена",
       },
     ],
     videos: [
@@ -171,6 +172,7 @@ const PATIENTS: Patient[] = [
       {
         type: "Online консультация",
         date: "15.01.2019, 12:30-13:00",
+        status: "Не подтвержена",
       },
       {
         type: "Online консультация",
