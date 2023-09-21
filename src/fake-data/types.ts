@@ -28,6 +28,7 @@ type Event = {
 };
 
 type Patient = {
+  id: string;
   name: string;
   image: StaticImageData;
   born: number;

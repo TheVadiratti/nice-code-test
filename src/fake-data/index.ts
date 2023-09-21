@@ -8,6 +8,7 @@ import eventImg from "../../public/fake-data/event.png";
 
 const PATIENTS: Patient[] = [
   {
+    id: "1",
     name: "Кравцова Александра",
     image: femaleAvatar,
     born: 1985,
@@ -78,6 +79,7 @@ const PATIENTS: Patient[] = [
     ],
   },
   {
+    id: "2",
     name: "Рожков Денис",
     image: maleAvatar,
     born: 1983,
@@ -151,6 +153,7 @@ const PATIENTS: Patient[] = [
     ],
   },
   {
+    id: "3",
     name: "nosikov@list.ru",
     image: defaultAvatar,
     born: 1922,
