@@ -40,7 +40,6 @@ const Avatar = memo(({ img, alt, size = "default", extraClass }: Props) => {
         alt={alt}
         width={sizes}
         height={sizes}
-        fill
       />
     </div>
   );
