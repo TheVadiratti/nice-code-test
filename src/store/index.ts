@@ -1,8 +1,9 @@
 import { configureStore } from "@reduxjs/toolkit";
 import { combineReducers } from "redux";
 import { patientsSlice } from "@/components/entities/patient";
+import navigationSlice from "@/components/features/navigation";
 
-const rootReducer = combineReducers({ patientsSlice });
+const rootReducer = combineReducers({ patientsSlice, navigationSlice });
 
 const store = configureStore({
   reducer: rootReducer,
