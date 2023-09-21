@@ -30,7 +30,7 @@ type Event = {
 type Patient = {
   id: string;
   name: string;
-  image: StaticImageData;
+  image?: StaticImageData;
   born: number;
   gender: "муж" | "жен"; // некоторые поспорят...
   notes: Note[];

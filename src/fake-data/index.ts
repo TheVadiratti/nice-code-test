@@ -1,5 +1,4 @@
 import type { Patient } from "./types";
-import defaultAvatar from "../../public/fake-data/default-avatar.png";
 import femaleAvatar from "../../public/fake-data/female.png";
 import maleAvatar from "../../public/fake-data/male.png";
 import noteImg from "../../public/fake-data/note.png";
@@ -155,7 +154,6 @@ const PATIENTS: Patient[] = [
   {
     id: "3",
     name: "nosikov@list.ru",
-    image: defaultAvatar,
     born: 1922,
     gender: "муж",
     notes: [
