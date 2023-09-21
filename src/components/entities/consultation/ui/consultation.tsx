@@ -7,9 +7,10 @@ import Styles from "./consultation.module.scss";
 interface Props {
   name: string;
   date: string;
+  status?: string;
 }
 
-const Consultation = memo(({ name, date }: Props) => {
+const Consultation = memo(({ name, date, status }: Props) => {
   const icon = useMemo(() => {
     if (name === "Online консультация") {
       return <ConsOnlineIcon />;
@@ -24,6 +25,7 @@ const Consultation = memo(({ name, date }: Props) => {
         <p className={Styles.name}>{name}</p>
         <p className={Styles.date}>{date}</p>
       </div>
+      {status && <p className={Styles.status}>{status}</p>}
     </PostCard>
   );
 });
