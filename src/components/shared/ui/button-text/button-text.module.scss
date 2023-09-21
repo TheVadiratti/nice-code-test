@@ -1,0 +1,18 @@
+@import "../../../../styles/vars.scss";
+
+.button {
+  padding: 0;
+  box-sizing: border-box;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.button:hover {
+  opacity: .8;
+}
+
+.label {
+  margin: 0;
+  @include m-text($gray-color, 20px)
+}
