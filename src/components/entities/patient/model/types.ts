@@ -37,7 +37,6 @@ type Patient = {
   consultations: Consultation[];
   videos: Video[];
   events: Event[];
-  isChecked?: boolean;
 };
 
 export type { Note, Consultation, Video, Event, Patient };

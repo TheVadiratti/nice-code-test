@@ -1,4 +1,14 @@
-import modeSlice, { setSelectPatientsCardsMode } from "./model/slice";
+import modeSlice, {
+  setSelectPatientsCardsMode,
+  selectPatient,
+  removePatient,
+} from "./model/slice";
+import { useIsPatientCheck } from "./lib/hooks";
 
 export default modeSlice;
-export { setSelectPatientsCardsMode };
+export {
+  setSelectPatientsCardsMode,
+  selectPatient,
+  removePatient,
+  useIsPatientCheck,
+};

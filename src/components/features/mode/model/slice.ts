@@ -2,11 +2,17 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 
 interface InitialState {
-  selectPatientsCards: boolean;
+  selectPatientsCards: {
+    isEnable: boolean;
+    checked: string[];
+  };
 }
 
 const initialState: InitialState = {
-  selectPatientsCards: false,
+  selectPatientsCards: {
+    isEnable: false,
+    checked: [],
+  },
 };
 
 const modeSlice = createSlice({
@@ -14,10 +20,18 @@ const modeSlice = createSlice({
   initialState,
   reducers: {
     setSelectPatientsCardsMode(state, action: PayloadAction<boolean>) {
-      state.selectPatientsCards = action.payload;
+      state.selectPatientsCards.isEnable = action.payload;
+    },
+    selectPatient(state, action: PayloadAction<string>) {
+      state.selectPatientsCards.checked.push(action.payload);
+    },
+    removePatient(state, action: PayloadAction<string>) {
+      state.selectPatientsCards.checked =
+        state.selectPatientsCards.checked.filter((id) => id !== action.payload);
     },
   },
 });
 
 export default modeSlice.reducer;
-export const { setSelectPatientsCardsMode } = modeSlice.actions;
+export const { setSelectPatientsCardsMode, selectPatient, removePatient } =
+  modeSlice.actions;
