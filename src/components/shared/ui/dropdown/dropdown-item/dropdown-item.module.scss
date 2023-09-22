@@ -1,0 +1,17 @@
+@import "../../../../../styles/vars.scss";
+
+.option {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.option:hover {
+  background-color: $background-light-gray;
+}
+
+.label {
+  margin: 0;
+  @include m-text($black-color, normal);
+}
