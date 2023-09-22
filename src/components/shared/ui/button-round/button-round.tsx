@@ -3,7 +3,8 @@ import {
   MouseEventHandler,
   useMemo,
   ReactNode,
-  FocusEventHandler,
+  useState,
+  useCallback,
 } from "react";
 import Styles from "./button-round.module.scss";
 import Dropdown from "../dropdown/dropdown";
@@ -11,7 +12,6 @@ import Dropdown from "../dropdown/dropdown";
 interface Props {
   type: "button" | "submit" | "reset";
   onClick?: MouseEventHandler<HTMLButtonElement>;
-  onBlur?: FocusEventHandler<HTMLButtonElement>;
   icon: JSX.Element;
   ariaLabel: string;
   isTransparent?: boolean;
@@ -25,7 +25,6 @@ const ButtonRound = memo(
   ({
     type,
     onClick,
-    onBlur,
     icon,
     ariaLabel,
     isTransparent,
@@ -34,6 +33,22 @@ const ButtonRound = memo(
     dropdownConfig,
     extraClass,
   }: Props) => {
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+
+    const handleDropdownOpen = useCallback(() => {
+      setIsDropdownOpen(true);
+    }, []);
+    const handleDropdownClose = useCallback(() => {
+      setIsDropdownOpen(false);
+    }, []);
+
+    const handleClick = useMemo(() => {
+      if (dropdownConfig) {
+        return handleDropdownOpen;
+      }
+      return onClick;
+    }, [dropdownConfig, onClick, handleDropdownOpen]);
+
     const svgColor = useMemo(() => {
       switch (svgInitColor) {
         case "gray":
@@ -63,8 +78,8 @@ const ButtonRound = memo(
       <button
         className={classNames.join(" ")}
         type={type}
-        onClick={onClick}
-        onBlur={onBlur}
+        onClick={handleClick}
+        onBlur={dropdownConfig ? handleDropdownClose : undefined}
         aria-label={ariaLabel}
       >
         {icon}
@@ -73,7 +88,7 @@ const ButtonRound = memo(
             <p className={Styles.hint}>{hint}</p>
           </div>
         )}
-        {dropdownConfig && (
+        {isDropdownOpen && (
           <Dropdown extraClass={Styles.dropdown}>{dropdownConfig}</Dropdown>
         )}
       </button>
