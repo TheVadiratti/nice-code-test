@@ -1,4 +1,10 @@
-import { memo, useCallback, useMemo } from "react";
+import {
+  ChangeEventHandler,
+  memo,
+  useCallback,
+  useMemo,
+  useState,
+} from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import {
   removeAllChecks,
@@ -10,14 +16,25 @@ import SelectControl from "@/components/shared/ui/select-control/select-control"
 import Styles from "./patient-list-header.module.scss";
 
 const PatientListHeader = memo(() => {
+  // Контроль инпута надо хранить в redux (принцип единственного источника правды)
+  // здесь сделал так для демонстрации.
+  const [searchInputValue, setSearchInputValue] = useState("");
   const dispatch = useAppDispatch();
   const patients = useAppSelector((state) => state.patientsSlice.patients);
   const selectPatientsCards = useAppSelector(
     (state) => state.modeSlice.selectPatientsCards,
   );
+
   const isAllChecked = useMemo(
     () => patients.length === selectPatientsCards.checked.length,
     [patients, selectPatientsCards.checked],
+  );
+
+  const handleSearchInput = useCallback<ChangeEventHandler<HTMLInputElement>>(
+    (e) => {
+      setSearchInputValue(e.target.value);
+    },
+    [],
   );
 
   const handleOnMode = useCallback(() => {
@@ -57,7 +74,7 @@ const PatientListHeader = memo(() => {
 
   return (
     <div className={Styles.cnt}>
-      <InputSearch value="" onChange={() => {}} />
+      <InputSearch value={searchInputValue} onChange={handleSearchInput} />
       <SelectControl
         openDispatch={handleOnMode}
         closeDispatch={handleOffMode}
