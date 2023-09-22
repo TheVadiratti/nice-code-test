@@ -26,6 +26,7 @@ const modeSlice = createSlice({
       state.selectPatientsCards.checked.push(action.payload);
     },
     selectPatients(state, action: PayloadAction<string[]>) {
+      state.selectPatientsCards.checked = [];
       state.selectPatientsCards.checked.push(...action.payload);
     },
     removePatient(state, action: PayloadAction<string>) {

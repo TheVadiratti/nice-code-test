@@ -38,10 +38,10 @@ const PatientListHeader = memo(() => {
   }, [dispatch]);
 
   const onChangeCheckbox = useMemo(() => {
-    if (isAllChecked) {
-      return handleRemoveAllCheck;
+    if (!isAllChecked) {
+      return handleAllCheck;
     }
-    return handleAllCheck;
+    return handleRemoveAllCheck;
   }, [handleAllCheck, handleRemoveAllCheck, isAllChecked]);
 
   const counterValue = useMemo(() => {
