@@ -43,6 +43,7 @@ const PatientListHeader = memo(() => {
 
   const handleOffMode = useCallback(() => {
     dispatch(setSelectPatientsCardsMode(false));
+    dispatch(removeAllChecks());
   }, [dispatch]);
 
   const handleAllCheck = useCallback(() => {
