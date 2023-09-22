@@ -1,13 +1,13 @@
 import { memo } from "react";
 import PostCard from "@/components/shared/ui/post-card/post-card";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 import Styles from "./video.module.scss";
 
 interface Props {
   name: string;
   date?: string;
   author: string;
-  image: string;
+  image: StaticImageData;
 }
 
 const Video = memo(({ name, date, author, image }: Props) => (

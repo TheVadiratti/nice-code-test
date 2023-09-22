@@ -21,7 +21,7 @@ const PatientDataNav = memo(() => {
           />
         );
       }
-      case "consultation": {
+      case "consultations": {
         return (
           <ButtonTextIcon
             type="button"
@@ -30,7 +30,7 @@ const PatientDataNav = memo(() => {
           />
         );
       }
-      case "video": {
+      case "videos": {
         return (
           <ButtonTextIcon
             type="button"
@@ -64,13 +64,13 @@ const PatientDataNav = memo(() => {
         />
         <ButtonNav
           label="Консультации"
-          page="consultation"
-          isActive={currentPage === "consultation"}
+          page="consultations"
+          isActive={currentPage === "consultations"}
         />
         <ButtonNav
           label="Видео"
-          page="video"
-          isActive={currentPage === "video"}
+          page="videos"
+          isActive={currentPage === "videos"}
         />
         <ButtonNav
           label="Мероприятия"
