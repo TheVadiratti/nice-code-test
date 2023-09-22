@@ -10,7 +10,7 @@ const PatientList = memo(() => {
     <ul className={Styles.list}>
       {patients.map((patient) => {
         const { name, image, id } = patient;
-        return <PatientItem name={name} avatar={image} id={id} />;
+        return <PatientItem name={name} avatar={image} id={id} key={id} />;
       })}
     </ul>
   );

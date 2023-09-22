@@ -15,37 +15,40 @@ const PatientDataMain = memo(() => {
   const content = useMemo(() => {
     switch (currentPage) {
       case "notes": {
-        return currentPatient?.notes.map((note) => (
-          <Note text={note.text} date={note.date} image={note.image} />
+        return currentPatient?.notes.map((note, i) => (
+          <Note text={note.text} date={note.date} image={note.image} key={i} />
         ));
       }
       case "consultations": {
-        return currentPatient?.consultations.map((consultation) => (
+        return currentPatient?.consultations.map((consultation, i) => (
           <Consultation
             name={consultation.type}
             date={consultation.date}
             status={consultation.status}
+            key={i}
           />
         ));
       }
       case "videos": {
-        return currentPatient?.videos.map((video) => (
+        return currentPatient?.videos.map((video, i) => (
           <Video
             name={video.name}
             date={video.dates}
             image={video.img}
             author={video.author}
+            key={i}
           />
         ));
       }
       case "events": {
-        return currentPatient?.events.map((event) => (
+        return currentPatient?.events.map((event, i) => (
           <Event
             name={event.name}
             type={event.type}
             img={event.img}
             date={event.date}
             time={event.time}
+            key={i}
           />
         ));
       }
