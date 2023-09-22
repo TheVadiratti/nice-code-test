@@ -1,10 +1,10 @@
-import { memo } from "react";
+import { ReactNode, memo } from "react";
 import { useAppSelector } from "@/store/hooks";
 import Avatar from "@/components/shared/ui/avatar/avatar";
 import Styles from "./patient-info.module.scss";
 
 interface Props {
-  moreButton?: JSX.Element;
+  moreButton?: ReactNode;
 }
 
 const PatientInfo = memo(({ moreButton }: Props) => {
