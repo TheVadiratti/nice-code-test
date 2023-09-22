@@ -2,6 +2,7 @@ import { memo } from "react";
 import ButtonRound from "@/components/shared/ui/button-round/button-round";
 import MoreIcon from "@/components/shared/ui/_icons/more";
 import Image, { StaticImageData } from "next/image";
+import moreButtonConfig from "../config/dropdown";
 import Styles from "./note.module.scss";
 
 interface Props {
@@ -26,10 +27,11 @@ const Note = memo(({ text, date, image }: Props) => (
     </div>
     <ButtonRound
       type="button"
-      ariaLabel="more"
-      isTransparent
-      icon={MoreIcon()}
       svgInitColor="black"
+      icon={MoreIcon()}
+      ariaLabel="опции"
+      isTransparent
+      dropdownConfig={moreButtonConfig}
       extraClass={Styles.button}
     />
   </li>
