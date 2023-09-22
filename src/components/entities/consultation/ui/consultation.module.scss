@@ -1,0 +1,48 @@
+@import "../../../../styles/vars.scss";
+
+.icon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: $background-light-gray;
+  border-radius: 100%;
+}
+
+.icon > svg > path {
+  fill: $gray-color;
+}
+
+.card:hover .icon {
+  background-color: $blue-color;
+}
+
+.card:hover .icon > svg > path {
+  fill: $background-white;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex-grow: 1;
+}
+
+.name {
+  margin: 0;
+  @include l-text($black-color, 16px);
+  text-align: left;
+}
+
+.date {
+  margin: 0;
+  @include m-text($gray-color, normal);
+  text-align: left;
+}
+
+.status {
+  margin: 0;
+  align-self: flex-end;
+  @include m-text(red, 20px);
+}

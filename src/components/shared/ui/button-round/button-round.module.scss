@@ -1,0 +1,72 @@
+@import "../../../../styles/vars.scss";
+
+.button {
+  width: 34px;
+  height: 34px;
+  box-sizing: border-box;
+  padding: 0;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  border-radius: 100%;
+  background-color: $background-gray;
+  cursor: pointer;
+}
+
+.svgGray > svg > path {
+  fill: $gray-color;
+}
+
+.svgBlack > svg > path {
+  fill: $black-color;
+}
+
+.button:hover {
+  background-color: $blue-color;
+}
+
+.button:hover > svg > path {
+  fill: $background-white;
+}
+
+.button:focus {
+  background-color: $blue-color;
+}
+
+.button:focus > svg > path {
+  fill: $background-white;
+}
+
+.button:has(.transparent):hover {
+  background-color: $background-light-gray;
+}
+
+.transparent {
+  background-color: transparent;
+}
+
+.hintCnt {
+  width: max-content;
+  padding: 4px 6px;
+  position: absolute; bottom: -26px; left: auto;
+  display: none;
+  background-color: $black-color;
+  opacity: .8;
+  border-radius: 3px;
+}
+
+.hint {
+  margin: 0;
+  @include s-text($background-white, normal);
+}
+
+.button:hover .hintCnt {
+  display: block;
+}
+
+.dropdown {
+  top: calc(100% - 10px);
+  right: 50%;
+}

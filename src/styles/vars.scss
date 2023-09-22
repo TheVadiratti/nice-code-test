@@ -1,0 +1,38 @@
+$blue-color: #4198C5;
+$black-color: #161718;
+$gray-color: #616F82;
+$background-white: #ffffff;
+$background-gray: #cdcdcd;
+$background-light-gray: #F1F2F3;
+
+$main-radius: 4px;
+
+@mixin s-text($color, $line-height) {
+  color: $color;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+@mixin m-text($color, $line-height) {
+  color: $color;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+@mixin l-text($color, $line-height) {
+  color: $color;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: $line-height;
+}
+
+%elipsis-overflow {
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap;
+}

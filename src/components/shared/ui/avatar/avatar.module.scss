@@ -1,0 +1,22 @@
+@import "../../../../styles/vars.scss";
+
+.cnt {
+  position: relative;
+  overflow: hidden;
+  border-radius: 100%;
+  background-color: $background-white;
+}
+
+.defaultSize {
+  width: 90px;
+  height: 90px;
+}
+
+.smallSize {
+  width: 40px;
+  height: 40px;
+}
+
+.image {
+  object-fit: cover;
+}

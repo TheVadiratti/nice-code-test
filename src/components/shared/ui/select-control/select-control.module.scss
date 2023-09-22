@@ -1,0 +1,25 @@
+@import "../../../../styles/vars.scss";
+
+.cnt {
+  flex-grow: 1;
+  box-sizing: border-box;
+  padding: 0 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.leftItems {
+  display: flex;
+  gap: 10px;
+}
+
+.rightItems {
+  display: flex;
+  gap: 15px;
+}
+
+.text {
+  margin: 0;
+  @include m-text($gray-color, 20px);
+}

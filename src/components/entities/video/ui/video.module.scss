@@ -1,0 +1,41 @@
+@import "../../../../styles/vars.scss";
+
+.imageCnt {
+  width: 82px;
+  height: 46px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.info {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.name {
+  max-width: 400px;
+  margin: 0;
+  @include l-text($black-color, 16px);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.author {
+  margin: 0;
+  @include m-text($gray-color, normal);
+  text-align: left;
+}
+
+.date {
+  margin: 0;
+  @include m-text($gray-color, normal);
+  text-align: right;
+  align-self: flex-end;
+  flex-grow: 1;
+}

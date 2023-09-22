@@ -1,0 +1,33 @@
+@import "../../../../styles/vars.scss";
+
+.imageCnt {
+  width: 82px;
+  height: 46px;
+  position: relative;
+}
+
+.image {
+  object-fit: cover;
+}
+
+.info {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.name {
+  max-width: 500px;
+  margin: 0;
+  @include m-text($black-color, 16px);
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.properties {
+  display: flex;
+  gap: 14px
+}

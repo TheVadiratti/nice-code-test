@@ -1,0 +1,39 @@
+@import "../../../../styles/vars.scss";
+
+.cnt {
+  list-style-type: none;
+  display: flex;
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.text {
+  margin: 0;
+  @include m-text($black-color, 24px);
+  text-align: justify;
+}
+
+.date {
+  color: $gray-color;
+}
+
+.imageCnt {
+  width: 209px;
+  height: 144px;
+  padding: 5px;
+  box-sizing: border-box;
+  border-radius: $main-radius;
+  background-color: $background-gray;
+}
+
+.image {
+  object-fit: contain;
+}
+
+.button {
+  flex-shrink: 0;
+}

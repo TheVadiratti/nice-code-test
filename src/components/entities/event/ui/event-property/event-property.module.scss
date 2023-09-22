@@ -1,0 +1,12 @@
+@import "../../../../../styles/vars.scss";
+
+.cnt {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.label {
+  margin: 0;
+  @include s-text($black-color, normal)
+}

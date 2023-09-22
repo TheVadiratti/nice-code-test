@@ -1,0 +1,13 @@
+@import "../../../../../styles/vars.scss";
+
+.info {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.name {
+  margin: 0;
+  @include l-text($black-color, 20px);
+}

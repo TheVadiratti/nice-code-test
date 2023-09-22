@@ -1,3 +1,8 @@
+"use client";
+
+import { Header } from "@/components/widgets/header";
+import { Provider } from "react-redux/es/exports";
+import store from "@/store";
 import "../styles/globals.scss";
 import "../styles/vars.scss";
 import { Inter } from "next/font/google";
@@ -11,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ru">
-      <body className={inter.className}>{children}</body>
+      <Provider store={store}>
+        <body className={inter.className}>
+          <Header />
+          {children}
+        </body>
+      </Provider>
     </html>
   );
 }
