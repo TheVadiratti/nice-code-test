@@ -1,6 +1,6 @@
 /* eslint-disable no-param-reassign */
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { Patient } from "@/fake-data/types";
+import { Patient } from "./types";
 
 interface InitialState {
   patients: Patient[];
