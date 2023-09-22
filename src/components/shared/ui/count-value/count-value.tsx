@@ -13,12 +13,15 @@ const CountValue = memo(({ value, isActive, extraClass }: Props) => {
     if (isActive) {
       names.push(Styles.active);
     }
+    if (value === 0) {
+      names.push(Styles.none);
+    }
     if (extraClass) {
       names.push(Styles.extraClass);
     }
 
     return names;
-  }, [isActive, extraClass]);
+  }, [isActive, value, extraClass]);
 
   return (
     <div className={classNames.join(" ")}>

@@ -11,6 +11,10 @@
   background-color: $blue-color;
 }
 
+.none {
+  display: none;
+}
+
 .value {
   margin: 0;
   @include s-text($background-white, 14px);

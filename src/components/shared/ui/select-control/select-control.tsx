@@ -14,7 +14,8 @@ import Checkbox from "../checkbox/checkbox";
 interface Props {
   openDispatch?: VoidFunction;
   closeDispatch?: VoidFunction;
-  value: number;
+  counterValue: number;
+  isCounterActive: boolean;
   // FIXME onActionsClick пока что необязателен, чтобы не было ошибки
   onActionsClick?: MouseEventHandler<HTMLButtonElement>;
   onChangeCheckbox: ChangeEventHandler<HTMLInputElement>;
@@ -25,7 +26,8 @@ const SelectControl = memo(
   ({
     openDispatch,
     closeDispatch,
-    value,
+    counterValue,
+    isCounterActive,
     onActionsClick,
     onChangeCheckbox,
     isAllChecked,
@@ -59,7 +61,7 @@ const SelectControl = memo(
             </>
           )}
 
-          <CountValue value={value} />
+          <CountValue isActive={isCounterActive} value={counterValue} />
         </div>
         <div className={Styles.rightItems}>
           {isOpen ? (

@@ -12,12 +12,12 @@ import Styles from "./patient-list-header.module.scss";
 const PatientListHeader = memo(() => {
   const dispatch = useAppDispatch();
   const patients = useAppSelector((state) => state.patientsSlice.patients);
-  const checkedPatients = useAppSelector(
-    (state) => state.modeSlice.selectPatientsCards.checked,
+  const selectPatientsCards = useAppSelector(
+    (state) => state.modeSlice.selectPatientsCards,
   );
   const isAllChecked = useMemo(
-    () => patients.length === checkedPatients.length,
-    [patients, checkedPatients],
+    () => patients.length === selectPatientsCards.checked.length,
+    [patients, selectPatientsCards.checked],
   );
 
   const handleOnMode = useCallback(() => {
@@ -44,13 +44,25 @@ const PatientListHeader = memo(() => {
     return handleAllCheck;
   }, [handleAllCheck, handleRemoveAllCheck, isAllChecked]);
 
+  const counterValue = useMemo(() => {
+    if (selectPatientsCards.isEnable) {
+      return selectPatientsCards.checked.length;
+    }
+    return patients.length;
+  }, [
+    patients.length,
+    selectPatientsCards.checked.length,
+    selectPatientsCards.isEnable,
+  ]);
+
   return (
     <div className={Styles.cnt}>
       <InputSearch value="" onChange={() => {}} />
       <SelectControl
         openDispatch={handleOnMode}
         closeDispatch={handleOffMode}
-        value={patients.length}
+        counterValue={counterValue}
+        isCounterActive={selectPatientsCards.isEnable}
         onChangeCheckbox={onChangeCheckbox}
         isAllChecked={isAllChecked}
       />
