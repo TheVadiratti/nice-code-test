@@ -3,6 +3,7 @@ import {
   useState,
   useCallback,
   MouseEventHandler,
+  ChangeEventHandler,
   // ChangeEventHandler,
 } from "react";
 import Styles from "./select-control.module.scss";
@@ -16,12 +17,19 @@ interface Props {
   value: number;
   // FIXME onActionsClick пока что необязателен, чтобы не было ошибки
   onActionsClick?: MouseEventHandler<HTMLButtonElement>;
-  // TODO onChangeCheckbox нужно добавить
-  // onChangeCheckbox: ChangeEventHandler<HTMLInputElement>;
+  onChangeCheckbox: ChangeEventHandler<HTMLInputElement>;
+  isAllChecked: boolean;
 }
 
 const SelectControl = memo(
-  ({ openDispatch, closeDispatch, value, onActionsClick }: Props) => {
+  ({
+    openDispatch,
+    closeDispatch,
+    value,
+    onActionsClick,
+    onChangeCheckbox,
+    isAllChecked,
+  }: Props) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleOpen = useCallback(() => {
@@ -42,7 +50,11 @@ const SelectControl = memo(
         <div className={Styles.leftItems}>
           {isOpen && (
             <>
-              <Checkbox htmlFor="select-all" isChecked onChange={() => {}} />
+              <Checkbox
+                htmlFor="select-all"
+                isChecked={isAllChecked}
+                onChange={onChangeCheckbox}
+              />
               <p className={Styles.text}>Все</p>
             </>
           )}

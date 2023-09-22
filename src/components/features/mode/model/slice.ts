@@ -25,13 +25,25 @@ const modeSlice = createSlice({
     selectPatient(state, action: PayloadAction<string>) {
       state.selectPatientsCards.checked.push(action.payload);
     },
+    selectPatients(state, action: PayloadAction<string[]>) {
+      state.selectPatientsCards.checked.push(...action.payload);
+    },
     removePatient(state, action: PayloadAction<string>) {
       state.selectPatientsCards.checked =
         state.selectPatientsCards.checked.filter((id) => id !== action.payload);
+    },
+    removeAllChecks(state) {
+      state.selectPatientsCards.checked =
+        initialState.selectPatientsCards.checked;
     },
   },
 });
 
 export default modeSlice.reducer;
-export const { setSelectPatientsCardsMode, selectPatient, removePatient } =
-  modeSlice.actions;
+export const {
+  setSelectPatientsCardsMode,
+  selectPatient,
+  selectPatients,
+  removePatient,
+  removeAllChecks,
+} = modeSlice.actions;
