@@ -6,7 +6,7 @@ import Styles from "./patient-item.module.scss";
 
 interface Props {
   name: string;
-  avatar: StaticImageData;
+  avatar?: StaticImageData;
   id: string;
 }
 

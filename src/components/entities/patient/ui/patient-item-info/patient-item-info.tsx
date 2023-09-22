@@ -5,7 +5,7 @@ import Styles from "./patient-item-info.module.scss";
 
 interface Props {
   name: string;
-  avatar: StaticImageData;
+  avatar?: StaticImageData;
 }
 
 const PatientItemInfo = memo(({ name, avatar }: Props) => (
