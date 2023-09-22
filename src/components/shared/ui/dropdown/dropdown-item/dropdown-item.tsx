@@ -1,10 +1,11 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
 import { memo, MouseEventHandler, useMemo } from "react";
-import Styles from "./dropdown.module.scss";
+import Styles from "./dropdown-item.module.scss";
 
 interface Props {
   label: string;
   // onClick необязателен пока нет бизнес логики (для демонстрации)
-  onClick?: MouseEventHandler<HTMLButtonElement>;
+  onClick?: MouseEventHandler<HTMLDivElement>;
   extraClass?: string;
 }
 
@@ -18,9 +19,9 @@ const DropdownItem = memo(({ label, onClick, extraClass }: Props) => {
   }, [extraClass]);
 
   return (
-    <button className={classNames.join(" ")} type="button" onClick={onClick}>
+    <div className={classNames.join(" ")} onClick={onClick}>
       <p className={Styles.label}>{label}</p>
-    </button>
+    </div>
   );
 });
 

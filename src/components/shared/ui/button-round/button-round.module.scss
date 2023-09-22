@@ -57,3 +57,8 @@
 .button:hover .hintCnt {
   display: block;
 }
+
+.dropdown {
+  top: calc(100% - 10px);
+  right: 50%;
+}

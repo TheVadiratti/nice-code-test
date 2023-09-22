@@ -1,5 +1,6 @@
-import { memo, MouseEventHandler, useMemo } from "react";
+import { memo, MouseEventHandler, useMemo, ReactNode } from "react";
 import Styles from "./button-round.module.scss";
+import Dropdown from "../dropdown/dropdown";
 
 interface Props {
   type: "button" | "submit" | "reset";
@@ -9,6 +10,7 @@ interface Props {
   isTransparent?: boolean;
   svgInitColor?: "gray" | "black";
   hint?: string;
+  dropdownConfig?: ReactNode;
   extraClass?: string;
 }
 
@@ -21,6 +23,7 @@ const ButtonRound = memo(
     isTransparent,
     svgInitColor = "gray",
     hint,
+    dropdownConfig,
     extraClass,
   }: Props) => {
     const svgColor = useMemo(() => {
@@ -60,6 +63,9 @@ const ButtonRound = memo(
           <div className={Styles.hintCnt}>
             <p className={Styles.hint}>{hint}</p>
           </div>
+        )}
+        {dropdownConfig && (
+          <Dropdown extraClass={Styles.dropdown}>{dropdownConfig}</Dropdown>
         )}
       </button>
     );
