@@ -1,10 +1,17 @@
-import { memo, MouseEventHandler, useMemo, ReactNode } from "react";
+import {
+  memo,
+  MouseEventHandler,
+  useMemo,
+  ReactNode,
+  FocusEventHandler,
+} from "react";
 import Styles from "./button-round.module.scss";
 import Dropdown from "../dropdown/dropdown";
 
 interface Props {
   type: "button" | "submit" | "reset";
   onClick?: MouseEventHandler<HTMLButtonElement>;
+  onBlur?: FocusEventHandler<HTMLButtonElement>;
   icon: JSX.Element;
   ariaLabel: string;
   isTransparent?: boolean;
@@ -18,6 +25,7 @@ const ButtonRound = memo(
   ({
     type,
     onClick,
+    onBlur,
     icon,
     ariaLabel,
     isTransparent,
@@ -56,6 +64,7 @@ const ButtonRound = memo(
         className={classNames.join(" ")}
         type={type}
         onClick={onClick}
+        onBlur={onBlur}
         aria-label={ariaLabel}
       >
         {icon}
