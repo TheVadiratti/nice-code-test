@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo } from "react";
+import { MouseEventHandler, memo, useCallback, useMemo } from "react";
 import { useAppDispatch, useAppSelector } from "@/store/hooks";
 import { PatientItemInfo, setCurrent } from "@/components/entities/patient";
 import { StaticImageData } from "next/image";
@@ -38,6 +38,13 @@ const PatientItem = memo(({ name, avatar, id }: Props) => {
     dispatch(setCurrent(id));
   }, [id, dispatch]);
 
+  const clickStopPropagation: MouseEventHandler<HTMLLabelElement> = useCallback(
+    (e) => {
+      e.stopPropagation();
+    },
+    [],
+  );
+
   const onChange = useMemo(() => {
     if (isChecked) {
       return handleRemoveCheck;
@@ -53,7 +60,12 @@ const PatientItem = memo(({ name, avatar, id }: Props) => {
         onClick={handleClick}
       >
         {isEnableSelectMode && (
-          <Checkbox isChecked={isChecked} htmlFor={name} onChange={onChange} />
+          <Checkbox
+            isChecked={isChecked}
+            htmlFor={name}
+            onChange={onChange}
+            onClick={clickStopPropagation}
+          />
         )}
         <PatientItemInfo name={name} avatar={avatar} />
       </button>
