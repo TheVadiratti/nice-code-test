@@ -1,5 +1,10 @@
 @import "./vars.scss";
 
+@font-face {
+  font-family: "SF-Pro-Display";
+  src: url("./fonts/SF-Pro-Display/SF-Pro-Display-Regular.otf") format("opentype");
+}
+
 body {
   height: 100vh;
   box-sizing: border-box;
@@ -9,4 +14,7 @@ body {
   box-sizing: border-box;
   margin: 0;
   background-color: $background-light-gray;
+  font-family: sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }

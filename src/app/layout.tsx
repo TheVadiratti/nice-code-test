@@ -5,9 +5,6 @@ import { Provider } from "react-redux/es/exports";
 import store from "@/store";
 import "../styles/globals.scss";
 import "../styles/vars.scss";
-import { Inter } from "next/font/google";
-
-const inter = Inter({ subsets: ["latin"] });
 
 export default function RootLayout({
   children,
@@ -17,7 +14,7 @@ export default function RootLayout({
   return (
     <html lang="ru">
       <Provider store={store}>
-        <body className={inter.className}>
+        <body>
           <Header />
           {children}
         </body>

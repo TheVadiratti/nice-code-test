@@ -13,6 +13,7 @@ $main-radius: 4px;
   font-style: normal;
   font-weight: 400;
   line-height: $line-height;
+  font-family: "SF-Pro-Display", "Arial", sans-serif;
 }
 
 @mixin m-text($color, $line-height) {
@@ -21,6 +22,7 @@ $main-radius: 4px;
   font-style: normal;
   font-weight: 400;
   line-height: $line-height;
+  font-family: "SF-Pro-Display", "Arial", sans-serif;
 }
 
 @mixin l-text($color, $line-height) {
@@ -29,6 +31,7 @@ $main-radius: 4px;
   font-style: normal;
   font-weight: 400;
   line-height: $line-height;
+  font-family: "SF-Pro-Display", "Arial", sans-serif;
 }
 
 %elipsis-overflow {
